@@ -1,0 +1,24 @@
+﻿<Window x:Class="DBGuiClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DBGuiClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid VerticalAlignment="Center" Grid.Row="0" Margin="10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                <Label Content="Data Source: " HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <Label Name="urlDataSource" HorizontalAlignment="Stretch" VerticalAlignment="Center" Content="URL"/>
+                <Button Name="btnRetrieveData" Click="retrieveData" ClickMode="Release" HorizontalAlignment="Right" VerticalAlignment="Center">Get Data</Button>
+            </StackPanel>
+        </Grid>
+        <DataGrid Name="patientsDataGrid" VerticalAlignment="Stretch" Grid.Row="1"></DataGrid>
+    </Grid>
+</Window>
