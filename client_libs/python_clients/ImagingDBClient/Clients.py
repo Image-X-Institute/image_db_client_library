@@ -56,7 +56,7 @@ class ImagingDBClient:
     def getPrescriptionDetailsForPatient(self, patientTrialId:str)->Dict:
         try:
             req = requests.get(self.baseUrl 
-                            + "/presciptions?patient_trial_id=" + patientTrialId,
+                            + "/prescriptions?patient_trial_id=" + patientTrialId,
                             headers={"Token": self._sessionToken})
         except (Exception, InvalidSchema) as ex:
             return {"status": self.RESPONSE_TYPE_ERR, "message":str(ex)}
